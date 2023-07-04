@@ -1,8 +1,8 @@
 public class CardValueFactory {
-    private static CardValueFactory factory = new CardValueFactory();
+    private static final CardValueFactory factory = new CardValueFactory();
 
     private CardValueFactory(){
-        System.out.println("CardFactory was created");
+        System.out.println("CardValueFactory was created");
     }
 
     public static CardValueFactory getInstance(){
