@@ -23,6 +23,16 @@ public class Card implements Comparable{
                 '}';
     }
 
+    public String toStringCardName(){
+        String result = "";
+        result =  namedValue.name() + " OF " + namedID.name();
+        return result;
+    }
+
+    public String toStringSaving(){
+        return cardID + ";" + value +";" + this.toStringCardName();
+    }
+
     public String toStringDebug(){
         return "Card{" +
                 "cardID: '" + cardID + "'" +

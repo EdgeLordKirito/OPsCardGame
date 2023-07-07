@@ -1,1 +1,2 @@
-File reading to Load the baseDeck from file into globals
+Create selfmade deque/Stack object that works like a stack saves alll cards in one but provides the last
+non rule changed card in case of.

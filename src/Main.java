@@ -1,21 +1,15 @@
-import FileLogic.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-        String test = "2;2";
-        Card c = CardFactory.getInstance().create(test,";");
-        System.out.println(c.toString());
-        FileManager manager = new FileManager();
-        String path = "src/GameAssets/Deck.txt";
-        List<String> list = new ArrayList<>();
-        list.add("2;4");
-        list.add("2;5");
-        list.add("2;6");
-        manager.appendAllLines(path,list);
-        List<String> result = manager.readAllLines(path);
-        System.out.println(result.toString());
+        System.out.println(Globals.FULL_DECK_FROM_DISK);
+        Game g = new Game();
+        GameCardStack s = new GameCardStack();
+        s.addCard(new Card(0,2));
+        s.addCard(new Card(1,5));
+        s.addCard(new Card(2,6));
+        s.addCard(new Card(3,15));
+        System.out.println(s.test());
+//        System.out.println(s.test());
+        System.out.println(s.getLastNonRuleChangedCard());
+        System.out.println(Globals.SPECIAL_CARDS);
     }
 }

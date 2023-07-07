@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Hand {
     private final List<Card> hand = new ArrayList<>();
@@ -37,7 +34,7 @@ public class Hand {
         List<Card> diamonds = new ArrayList<>();
         List<Card> clubs = new ArrayList<>();
         List<Card> spades = new ArrayList<>();
-        for (Card c :this.hand) {
+        for (Card c : this.hand) {
             switch (c.getNamedID()){
                 case HEARTS -> hearts.add(c);
                 case DIAMONDS -> diamonds.add(c);
@@ -54,5 +51,18 @@ public class Hand {
 
     public String toString(){
         return hand.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hand hand1 = (Hand) o;
+        return hand.equals(hand1.hand);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(hand);
     }
 }
